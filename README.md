@@ -1,0 +1,4 @@
+django-slim
+===========
+
+Django Slim
