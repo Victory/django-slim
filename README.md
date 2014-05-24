@@ -1,4 +1,4 @@
-django-slim
+Django Slim
 ===========
 
-Django Slim
+Learn and share a life style.
