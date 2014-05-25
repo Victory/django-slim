@@ -1,0 +1,12 @@
+language: python
+
+python:
+  - 2.7
+
+install: "pip install -r requirements.txt"
+
+before_install:
+  - echo "Nothing todo right now"
+
+script: 
+  - python run-tests.py
