@@ -10,3 +10,5 @@ before_install:
 
 script: 
   - python run-tests.py
+
+after_success: coveralls

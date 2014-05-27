@@ -28,4 +28,14 @@ errs += pretty_assertish(
 print "Running `home` module tests"
 errs = call(['python', 'slim/manage.py', 'test', 'home'])
 
+
+omits = ['slim/slim/wsgi']
+omit = ','.join(omits)
+source = 'slim'
+call(['coverage', 'run',
+      '--omit', omit,
+      '--source', 'slim',
+      'slim/manage.py', 'test', 'home'])
+call(['coverage', 'report'])
+
 exit(errs)
