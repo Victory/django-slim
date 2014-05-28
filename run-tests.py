@@ -29,7 +29,7 @@ print "Running `home` module tests"
 errs = call(['python', 'slim/manage.py', 'test', 'home'])
 
 
-omits = ['slim/slim/wsgi']
+omits = ['slim/slim/wsgi.py']
 omit = ','.join(omits)
 source = 'slim'
 call(['coverage', 'run',

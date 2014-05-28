@@ -16,4 +16,5 @@ class LiveValidationTestCase(LiveServerTestCase):
         self.browser.quit()
 
     def test_homepage_200(self):
-        self.browser.get(self.live_server_url + "/magic-bunny")
+        self.browser.get(self.live_server_url)
+        assert "HELLO SLIM" in self.browser.title
