@@ -2,6 +2,9 @@ from selenium import webdriver
 
 from django.test import LiveServerTestCase
 
+from django.contrib.staticfiles.testing \
+    import StaticLiveServerCase
+
 
 class LiveValidationTestCase(LiveServerTestCase):
     """
@@ -18,3 +21,8 @@ class LiveValidationTestCase(LiveServerTestCase):
     def test_homepage_200(self):
         self.browser.get(self.live_server_url)
         assert "HELLO SLIM" in self.browser.title
+
+
+class LiveStaticTestCase(StaticLiveServerCase):
+    def test_jquery_200(self):
+        self.browser.get(self.live_server_url + "/static/js/jquery.js")
