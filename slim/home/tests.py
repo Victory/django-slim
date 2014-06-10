@@ -6,7 +6,7 @@ from django.contrib.staticfiles.testing \
     import StaticLiveServerCase
 
 
-class LiveValidationTestCase(LiveServerTestCase):
+class LiveValidationTestCase(StaticLiveServerCase):
     """
     run tests on ajaxy live validation
     """
@@ -24,5 +24,12 @@ class LiveValidationTestCase(LiveServerTestCase):
 
 
 class LiveStaticTestCase(StaticLiveServerCase):
+    def setUp(self):
+        self.browser = webdriver.Firefox()
+        self.browser.implicitly_wait(3)
+
+    def tearDown(self):
+        self.browser.quit()
+
     def test_jquery_200(self):
         self.browser.get(self.live_server_url + "/static/js/jquery.js")
