@@ -1,0 +1,11 @@
+{% load staticfiles %}
+<html>
+  <head>
+    {% block title %}{% endblock %}
+    <script type="text/javascript" src="{% static "js/jquery.js" %}"></script>
+  </head>
+  <body>
+    {% block content %}
+    {% endblock %}
+  </body>
+</html>
