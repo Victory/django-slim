@@ -3,9 +3,11 @@
   <head>
     {% block title %}{% endblock %}
     <script type="text/javascript" src="{% static "js/jquery.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/slim.js" %}"></script>
   </head>
   <body>
     {% block content %}
     {% endblock %}
+    <div id="footTag"></div>
   </body>
 </html>

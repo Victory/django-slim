@@ -33,3 +33,8 @@ class LiveStaticTestCase(StaticLiveServerCase):
 
     def test_jquery_200(self):
         self.browser.get(self.live_server_url + "/static/js/jquery.js")
+
+    def test_footer(self):
+        self.browser.get(self.live_server_url)
+        footer = self.browser.find_element_by_id("footTag")
+        assert footer.text == u"footer"

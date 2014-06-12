@@ -1,11 +1,7 @@
+{% extends "base.html" %}
 {% load i18n %}
-{% load staticfiles %}
-<html>
-<head>
-  <title>{% trans "HELLO SLIM" %}</title>
 
-  <script type="text/javascript" src="{% static "js/jquery.js" %}"></script>
-</head>
-<body>
+{% block title %}<title>HELLO SLIM</title>{% endblock %}
+{% block content %}
   <p>{% trans "This is the body" %}</p>
-</body>
+{% endblock %}
