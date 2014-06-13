@@ -5,8 +5,13 @@ admin.autodiscover()
 
 import home.views
 
+
+js_info_dict = {
+    'packages': ('slim',),
+}
+
 urlpatterns = patterns('',
-    # Examples:
     url(r'^$', home.views.DetailSlimView.as_view(), name='home'),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^jsi18n/$', 'django.views.i18n.javascript_catalog', js_info_dict),
 )

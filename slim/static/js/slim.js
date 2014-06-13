@@ -1,3 +1,3 @@
 jQuery(function ($) {
-  $("#footTag").text("footer");
+  $("#footTag").text(gettext("footer"));
 });
