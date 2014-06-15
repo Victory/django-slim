@@ -14,3 +14,5 @@ cmd += [
     'djangojs']
 
 call(cmd)
+
+call(['django-admin.py', 'compilemessages'])

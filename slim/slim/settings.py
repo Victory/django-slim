@@ -39,10 +39,12 @@ INSTALLED_APPS = (
     'home',
 )
 
+
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -51,6 +53,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'slim.urls'
 
 WSGI_APPLICATION = 'slim.wsgi.application'
+
 
 
 # Database
@@ -75,6 +78,10 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+#LOCALE_PATHS = (
+#    os.path.join(os.path.dirname(BASE_DIR), 'locale'),
+#)
 
 
 # Static files (CSS, JavaScript, Images)
