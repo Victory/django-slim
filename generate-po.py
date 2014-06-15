@@ -4,7 +4,7 @@ cmd = [
     'django-admin.py',
     'makemessages',
     '-l',
-    'en-us',
+    'se',
     '-i',
     'pyenv/*']
 call(cmd)
