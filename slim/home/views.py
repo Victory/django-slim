@@ -1,3 +1,5 @@
+from django.utils.translation import ugettext as _
+
 from django.views.generic import (
     ListView,
     CreateView,
@@ -7,4 +9,5 @@ from django.views.generic import (
     TemplateView)
 
 class DetailSlimView(TemplateView):
+    output = _("Welcome to my site.")
     template_name = 'home.html'
