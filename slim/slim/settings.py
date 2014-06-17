@@ -69,7 +69,7 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'de-de'
 
 TIME_ZONE = 'UTC'
 
@@ -82,7 +82,14 @@ USE_TZ = True
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'conf', 'locale'),
 )
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.i18n',
+    'django.contrib.auth.context_processors.auth'
+)
 
+
+#print LOCALE_PATHS
+#print TEMPLATE_CONTEXT_PROCESSORS
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
