@@ -22,12 +22,7 @@ def pretty_assertish(msg, cond):
 errs = 0
 errs += pretty_assertish(
     "Checking Version Number",
-    django.get_version() == '1.7b4');
-
-
-print "Running `home` module tests"
-errs = call(['python', 'slim/manage.py', 'test', 'home'])
-
+    django.get_version() == '1.7b4')
 
 omits = ['slim/slim/wsgi.py']
 omit = ','.join(omits)
@@ -35,7 +30,7 @@ source = 'slim'
 call(['coverage', 'run',
       '--omit', omit,
       '--source', 'slim',
-      'slim/manage.py', 'test', 'home'])
-call(['coverage', 'report'])
+      'slim/manage.py', 'test', 'home', 'infoorg'])
+errs += call(['coverage', 'report'])
 
 exit(errs)

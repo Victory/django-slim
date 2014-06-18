@@ -1,3 +1,5 @@
+from django.shortcuts import render
+
 from django.utils.translation import ugettext as _
 
 from django.views.generic import (
@@ -8,5 +10,6 @@ from django.views.generic import (
     DetailView,
     TemplateView)
 
-class DetailSlimView(TemplateView):
-    template_name = 'home.html'
+
+class HomeView(TemplateView):
+    template_name = "info-home.html"
