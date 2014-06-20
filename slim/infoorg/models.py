@@ -10,3 +10,5 @@ class Informer(models.Model):
         validators=[validate_title])
     description = models.TextField(
         validators=[validate_description])
+    author = models.CharField(
+        max_length=140)
