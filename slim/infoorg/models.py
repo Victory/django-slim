@@ -18,6 +18,16 @@ class InformerLinks(models.Model):
     url = models.TextField()
 
 
+class InformerIpNotes(models.Model):
+    title = models.CharField(
+        max_length=140,
+         validators=[validate_title])
+    note = models.TextField()
+
+    date_added = models.DateTimeField()
+    last_modified = models.DateTimeField(auto_now_add=True)
+
+
 class Informer(models.Model):
     title = models.CharField(
         max_length=140,
@@ -34,3 +44,7 @@ class Informer(models.Model):
     links = models.ForeignKey(
         InformerLinks,
         verbose_name="links related to this informer")
+
+    ip_notes = models.ForeignKey(
+        InformerIpNotes,
+        verbose_name="notes about intellectual property rights")
