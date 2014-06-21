@@ -11,6 +11,13 @@ class InformerFiles(models.Model):
         validators=[validate_title])
 
 
+class InformerLinks(models.Model):
+    title = models.CharField(
+        max_length=140,
+        validators=[validate_title])
+    url = models.TextField()
+
+
 class Informer(models.Model):
     title = models.CharField(
         max_length=140,
@@ -22,4 +29,8 @@ class Informer(models.Model):
 
     files = models.ForeignKey(
         InformerFiles,
-        verbose_name="files related to the informer")
+        verbose_name="files related to this informer")
+
+    links = models.ForeignKey(
+        InformerLinks,
+        verbose_name="links related to this informer")
