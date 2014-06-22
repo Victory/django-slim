@@ -59,3 +59,6 @@ class Informer(models.Model):
         verbose_name="notes about intellectual property rights")
 
     informer = models.ForeignKey(InformerStatusType, primary_key=True)
+
+    date_added = models.DateTimeField()
+    last_modified = models.DateTimeField(auto_now_add=True)
