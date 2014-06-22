@@ -15,6 +15,7 @@ class InformerLinks(models.Model):
     title = models.CharField(
         max_length=140,
         validators=[validate_title])
+
     url = models.TextField()
 
 
@@ -28,12 +29,20 @@ class InformerIpNotes(models.Model):
     last_modified = models.DateTimeField(auto_now_add=True)
 
 
+class InformerStatusType(models.Model):
+    title = models.CharField(
+        max_length=140,
+        validators=[validate_title])
+
+
 class Informer(models.Model):
     title = models.CharField(
         max_length=140,
         validators=[validate_title])
+
     description = models.TextField(
         validators=[validate_description])
+
     author = models.CharField(
         max_length=140)
 
@@ -48,3 +57,5 @@ class Informer(models.Model):
     ip_notes = models.ForeignKey(
         InformerIpNotes,
         verbose_name="notes about intellectual property rights")
+
+    informer = models.ForeignKey(InformerStatusType, primary_key=True)
