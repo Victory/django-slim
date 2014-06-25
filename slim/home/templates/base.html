@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load i18n %}
 <html>
   <head>
     {% block title %}{% endblock %}
@@ -25,8 +26,11 @@
         <div class="col-xs-12">
           <p>Navigation</p>
           <p>
+            <a href="{% url "home" %}">
+              {% trans "home" %}
+            </a>
             <a href="{% url 'info-home' %}">
-              Info home
+              {% trans "Organized Info" %}
             </a>
           </p>
         </div>
