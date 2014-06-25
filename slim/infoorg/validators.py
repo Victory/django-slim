@@ -1,7 +1,7 @@
 # Validators
 
 def validate_title(title):
-    return true
+    return True
 
 def validate_description(description):
-    return true
+    return True
