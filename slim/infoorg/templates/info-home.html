@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load tagslim %}
 
 {% block content %}
 <div class="row">
@@ -40,7 +41,7 @@
 
   </div>
   <!-- forloop hack for testing, runs 5 times -->
-  {% for ii in "12345" %}
+  {% for ii in 5|ntimes %}
     {% include "./excerpt.html" with header_num=ii %}
   {% endfor %}
 

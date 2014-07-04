@@ -30,7 +30,7 @@ source = 'slim'
 call(['coverage', 'run',
       '--omit', omit,
       '--source', 'slim',
-      'slim/manage.py', 'test', 'home', 'infoorg'])
+      'slim/manage.py', 'test', 'home', 'infoorg', 'tagslim'])
 errs += call(['coverage', 'report'])
 
 exit(errs)
