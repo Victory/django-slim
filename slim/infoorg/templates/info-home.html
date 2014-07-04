@@ -42,7 +42,7 @@
   </div>
   <!-- forloop hack for testing, runs 5 times -->
   {% for ii in 5|ntimes %}
-    {% include "./excerpt.html" with header_num=ii %}
+    {% include "./partials/excerpt.html" with header_num=ii %}
   {% endfor %}
 
   <div class="row">
@@ -53,16 +53,7 @@
 
   <div class="row">
     <div class="col-xs-3">
-      <form>
-        {% trans "label1" %}
-        <input /> <br>
-        {% trans "label2" %}
-        <input /><br>
-        {% trans "label3" %}
-        <br>
-        <textarea></textarea><br>
-        <button type="submit">{% trans "submit" %}</button>
-      </form>
+        {% include "./partials/info-tip-form.html" with header_num=ii %}
     </div>
   </div>
 </div>
