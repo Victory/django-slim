@@ -6,6 +6,7 @@ from infoorg.forms import InfoTipForm
 
 from django.views.generic import (
     ListView,
+    FormView,
     CreateView,
     UpdateView,
     DeleteView,
@@ -13,11 +14,11 @@ from django.views.generic import (
     TemplateView)
 
 
-class HomeView(TemplateView):
+class HomeView(FormView):
     template_name = "info-home.html"
-
+    form_class = InfoTipForm
     def get_context_data(self, **kwargs):
         context = super(HomeView, self).get_context_data(**kwargs)
         context['action'] = reverse('info-home')
-        context['form'] = InfoTipForm()
+
         return context

@@ -1,5 +1,5 @@
 {% load i18n %}
-<form action="{% url "info-home" %}">
+<form action="{% url "info-home" %}" method="POST">
   {% csrf_token %}
   {{ form.as_ul }}
   <button type="submit">{% trans "submit" %}</button>
