@@ -56,8 +56,6 @@ ROOT_URLCONF = 'slim.urls'
 
 WSGI_APPLICATION = 'slim.wsgi.application'
 
-
-
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 

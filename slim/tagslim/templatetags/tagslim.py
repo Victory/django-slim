@@ -5,4 +5,4 @@ register = template.Library()
 
 @register.filter
 def ntimes(cnt):
-    return xrange(1, cnt+1)
+    return xrange(1, cnt + 1)
