@@ -1,12 +1,6 @@
 {% load i18n %}
-
-<form>
-  {% trans "label1" %}
-  <input /> <br>
-  {% trans "label2" %}
-  <input /><br>
-  {% trans "label3" %}
-  <br>
-  <textarea></textarea><br>
+<form action="{% url "info-home" %}">
+  {% csrf_token %}
+  {{ form.as_ul }}
   <button type="submit">{% trans "submit" %}</button>
 </form>
