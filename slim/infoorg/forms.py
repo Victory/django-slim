@@ -8,4 +8,5 @@ class InfoTipForm(forms.Form):
     cc_myself = forms.BooleanField(required=False)
 
     def send_mail(self):
-        print "I would totally send mail now"
+        subject = self.cleaned_data['subject']
+        print "I would totally send mail now", subject

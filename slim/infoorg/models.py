@@ -62,3 +62,14 @@ class Informer(models.Model):
 
     date_added = models.DateTimeField()
     last_modified = models.DateTimeField(auto_now_add=True)
+
+
+class InfoTip(models.Model):
+    subject = models.CharField(
+        max_length=140,
+        validators=[validate_title])
+
+    message = models.TextField(
+        validators=[validate_description])
+
+    sender = models.EmailField()
