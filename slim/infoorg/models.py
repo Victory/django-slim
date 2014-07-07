@@ -73,3 +73,6 @@ class InfoTip(models.Model):
         validators=[validate_description])
 
     sender = models.EmailField()
+
+    def __unicode__(self):
+        return unicode(self.subject)
