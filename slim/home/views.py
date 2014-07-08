@@ -19,6 +19,7 @@ class JSONResponseMixin(object):
             content_type='text/json',
             **kwargs)
 
+
 class DetailSlimView(TemplateView):
     template_name = 'home.html'
 
