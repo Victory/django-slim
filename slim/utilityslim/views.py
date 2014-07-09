@@ -4,6 +4,7 @@ import json
 
 from django.http import HttpResponse
 
+
 class JSONResponseMixin(object):
     def json_response(self, context, **kwargs):
         return HttpResponse(
