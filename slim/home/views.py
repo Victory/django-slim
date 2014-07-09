@@ -1,7 +1,6 @@
-import json
-
 from django.utils.translation import ugettext as _
-from django.http import HttpResponse
+
+from utilityslim.views import JSONResponseMixin
 
 from django.views.generic import (
     ListView,
@@ -10,14 +9,6 @@ from django.views.generic import (
     DeleteView,
     DetailView,
     TemplateView)
-
-
-class JSONResponseMixin(object):
-    def json_response(self, context, **kwargs):
-        return HttpResponse(
-            json.dumps(context),
-            content_type='text/json',
-            **kwargs)
 
 
 class DetailSlimView(TemplateView):
