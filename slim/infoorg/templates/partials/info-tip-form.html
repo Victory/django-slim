@@ -1,20 +1,11 @@
 {% load i18n %}
-<form action="{% url "info-tip" %}" method="POST" id="infoTipForm">
-  {% csrf_token %}
-  {{ form.as_ul }}
-  <button type="submit">{% trans "submit" %}</button>
-</form>
 
-<script type="text/javascript">
-jQuery(function($) {
-  $("#infoTipForm button").click(function (evt) {
-    evt.preventDefault();
-    $.post(
-    '{% url 'info-tip' %}',
-    $("#infoTipForm").serialize(),
-    function (data, status, xhr) {
-      console.log(status);
-    });
-  });
-});
-</script>
+<div id="formBox">
+
+  <form action="{% url "info-tip" %}" method="POST" id="infoTipForm">
+    {% csrf_token %}
+    {{ form.as_ul }}
+    <button type="submit">{% trans "submit" %}</button>
+  </form>
+
+</div>

@@ -55,6 +55,24 @@
     <div class="col-xs-3">
         {% include "./partials/info-tip-form.html" with header_num=ii %}
     </div>
+
+    <script type="text/javascript">
+      jQuery(function($) {
+      $("#infoTipForm button").click(function (evt) {
+        evt.preventDefault();
+        $.post(
+          '{% url 'info-tip' %}',
+          $("#infoTipForm").serialize(),
+          function (data, status, xhr) {
+          if (!data.success) {
+            $("#infoTipForm").html(data.html);
+            console.log(data.success);
+          }
+        });
+      });
+    });
+    </script>
+
   </div>
 </div>
 {% endblock %}

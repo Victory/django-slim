@@ -2,6 +2,8 @@ from django.shortcuts import render
 
 from django.utils.translation import ugettext as _
 from django.core.urlresolvers import reverse
+from django.shortcuts import render
+from django.template import Context, loader
 
 from django.views.generic import (
     ListView,
@@ -13,7 +15,7 @@ from django.views.generic import (
     TemplateView)
 
 from infoorg.forms import InfoTipForm
-from utilityslim.views import JSONResponseMixin
+from utilityslim.views import JSONFormMixin
 
 
 class HomeView(FormView):
@@ -25,23 +27,14 @@ class HomeView(FormView):
         return context
 
 
-class InfoTipView(JSONResponseMixin, FormView):
+class InfoTipView(JSONFormMixin, FormView):
     form_class = InfoTipForm
     success_url = '/infoorg/infotip'
 
-    def form_invalid(self, form):
-        context = super(InfoTipView, self).form_valid(form)
-        print context
-        context['form_submited'] = True
-        context['form_valid'] = False
-        return context
-
-    def form_valid(self, form):
-        # This method is called when valid form data has been POSTed.
-        # It should return an HttpResponse.
-        print "WOOOW"
-        form.send_mail()
-        return super(InfoTipView, self).form_valid(form)
+    def render_form(self, form):
+        t = loader.get_template('partials/info-tip-form.html')
+        c = Context({"form": form})
+        return t.render(c)
 
     def get_context_data(self, **kwargs):
         context = {}
