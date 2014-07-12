@@ -3,7 +3,11 @@
 <html>
   <head>
     {% block title %}{% endblock %}
-    <script type="text/javascript" src="{% static "js/jquery.js" %}"></script>
+
+   {% block content_head %}{% endblock %}
+
+    <script type="text/javascript" 
+            src="{% static "js/jquery.js" %}"></script>
 
     <script type="text/javascript" 
             src="{% url 'django.views.i18n.javascript_catalog' %}"></script>
@@ -11,10 +15,12 @@
     <script type="text/javascript" src="{% static "js/slim.js" %}"></script>
 
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" 
+          href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 
     <!-- Optional theme -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" 
+          href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
