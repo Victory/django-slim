@@ -20,7 +20,7 @@ class JSONFormMixin(JSONResponseMixin):
 
     def handle_form(self, form):
         # TODO: see if we should call form.handle()
-        return {"status": True}
+        return {"success": True}
 
     def form_invalid(self, form):
         form_html = self.render_form(form)
@@ -28,8 +28,8 @@ class JSONFormMixin(JSONResponseMixin):
         response = super(JSONResponseMixin, self).form_invalid(form)
         if self.request.is_ajax():
             data = {
+                "success": False,
                 "html": form_html,
-                "success": False
             }
             return self.json_response(data, status=200)
         else:
