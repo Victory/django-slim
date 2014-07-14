@@ -3,7 +3,8 @@ from django.shortcuts import render
 from django.utils.translation import ugettext as _
 from django.core.urlresolvers import reverse
 from django.shortcuts import render
-from django.template import Context, loader
+from django.core.context_processors import csrf
+from django.template import RequestContext, loader
 
 from django.views.generic import (
     ListView,
@@ -33,7 +34,7 @@ class InfoTipView(JSONFormMixin, FormView):
 
     def render_form(self, form):
         t = loader.get_template('partials/info-tip-form.html')
-        c = Context({"form": form})
+        c = RequestContext(self.request, {"form": form})
         return t.render(c)
 
     def get_context_data(self, **kwargs):
