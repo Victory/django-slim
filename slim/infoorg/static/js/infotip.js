@@ -7,10 +7,10 @@ jQuery(function($) {
         $("#infoTipForm").serialize(),
         function (data, status, xhr) {
           if (!data.success) {
-            $("#infoTipForm").html(data.html);
+            $("#formBox").html(data.html);
             bindInfoTip();
           } else {
-            $("#infoTipForm").parent().html("Thanks for Submitting!");
+            $("#formBox").html("Thanks for Submitting!");
           }
         });
     });

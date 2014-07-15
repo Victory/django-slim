@@ -45,6 +45,25 @@ class InfoTipFormTestCase(StaticLiveServerCase):
         self.key("sender", "just@nemail.com")
         form.find_element_by_css_selector("[type=submit]").click()
         assert self.browser.current_url == self.live_server_url + "/infoorg/"
-        sleep(3)
+        sleep(1)
+        formBox = self.browser.find_element_by_id("formBox")
+        assert formBox.text == "Thanks for Submitting!"
+
+    def test_submit_info_tip_with_error(self):
+        self.browser.get(self.live_server_url + "/infoorg/")
+        form = self.browser.find_element_by_id("infoTipForm")
+        self.key("subject", "just some text")
+        self.key("message", "just some other text")
+
+        form.find_element_by_css_selector("[type=submit]").click()
+        assert self.browser.current_url == self.live_server_url + "/infoorg/"
+        sleep(1)
+        errs = self.browser.find_elements_by_css_selector(".errorlist")
+        assert len(errs) > 0
+
+        self.key("sender", "just@nemail.com")
+        form = self.browser.find_element_by_id("infoTipForm")
+        form.find_element_by_css_selector("[type=submit]").click()
+        sleep(1)
         formBox = self.browser.find_element_by_id("formBox")
         assert formBox.text == "Thanks for Submitting!"
