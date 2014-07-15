@@ -10,7 +10,7 @@ jQuery(function($) {
             $("#infoTipForm").html(data.html);
             bindInfoTip();
           } else {
-            $("#infoTipForm").html("Thanks for Submitting!");
+            $("#infoTipForm").parent().html("Thanks for Submitting!");
           }
         });
     });

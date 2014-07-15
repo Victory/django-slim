@@ -41,5 +41,10 @@ class InfoTipFormTestCase(StaticLiveServerCase):
         self.browser.get(self.live_server_url + "/infoorg/")
         form = self.browser.find_element_by_id("infoTipForm")
         self.key("subject", "just some text")
+        self.key("message", "just some other text")
+        self.key("sender", "just@nemail.com")
         form.find_element_by_css_selector("[type=submit]").click()
         assert self.browser.current_url == self.live_server_url + "/infoorg/"
+        sleep(3)
+        formBox = self.browser.find_element_by_id("formBox")
+        assert formBox.text == "Thanks for Submitting!"
