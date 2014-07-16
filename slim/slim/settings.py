@@ -100,5 +100,4 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'infoorg', 'static'),
 )
 
-print STATICFILES_DIRS
 STATIC_URL = '/static/'
