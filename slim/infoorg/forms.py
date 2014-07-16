@@ -8,6 +8,9 @@ class InfoTipForm(forms.Form):
     sender = forms.EmailField()
     cc_myself = forms.BooleanField(required=False)
 
+    def handle(self):
+        self.send_mail()
+
     def send_mail(self):
         it = InfoTip(
             subject=self.cleaned_data['subject'],

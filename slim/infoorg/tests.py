@@ -6,6 +6,8 @@ from django.test import LiveServerTestCase
 from django.contrib.staticfiles.testing \
     import StaticLiveServerCase
 
+from infoorg.models import InfoTip
+
 
 class LiveValidationTestCase(StaticLiveServerCase):
     """
@@ -67,3 +69,6 @@ class InfoTipFormTestCase(StaticLiveServerCase):
         sleep(1)
         formBox = self.browser.find_element_by_id("formBox")
         assert formBox.text == "Thanks for Submitting!"
+
+        it = InfoTip.objects.filter(subject="just some text")
+        assert len(it) == 1

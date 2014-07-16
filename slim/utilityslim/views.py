@@ -19,7 +19,7 @@ class JSONFormMixin(JSONResponseMixin):
         raise Exception('form render function must be defined')
 
     def handle_form(self, form):
-        # TODO: see if we should call form.handle()
+        form.handle()
         return {"success": True}
 
     def form_invalid(self, form):
