@@ -1,4 +1,6 @@
 from django import forms
+from django.core import mail
+
 from infoorg.models import InfoTip
 
 
@@ -9,12 +11,25 @@ class InfoTipForm(forms.Form):
     cc_myself = forms.BooleanField(required=False)
 
     def handle(self):
-        self.send_mail()
+        self.save_it()
+        if self.cleaned_data['cc_myself']:
+            self.send_mail()
 
-    def send_mail(self):
+    def save_it(self):
         it = InfoTip(
             subject=self.cleaned_data['subject'],
             message=self.cleaned_data['message'],
             sender=self.cleaned_data['sender'])
         it.save()
-        print "I would totally send mail now"
+
+    def send_mail(self):
+        sender = self.cleaned_data['sender']
+        subject = self.cleaned_data['subject']
+        message = self.cleaned_data['message']
+
+        mail.send_mail(
+            'Thanks for Submitting an InfoTip!',
+            subject + "\n" + message,
+            'from@example.com',
+            [sender],
+            fail_silently=False)

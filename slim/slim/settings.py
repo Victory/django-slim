@@ -101,3 +101,6 @@ STATICFILES_DIRS = (
 )
 
 STATIC_URL = '/static/'
+
+#EMAIL_BACKEND = 'django.core.mail.backends.locmem.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
