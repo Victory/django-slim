@@ -33,7 +33,7 @@ call(['coverage', 'run',
       'slim/manage.py', 'test', 'home', 'infoorg', 'tagslim'])
 errs += call(['coverage', 'report'])
 
-err = call(['sh', 'pep8.sh'])
+err = call(['sh', 'flake8.sh'])
 if err != 0:
     errs += 1
 
