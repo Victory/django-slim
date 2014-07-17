@@ -10,7 +10,8 @@ js_info_dict = {
     'packages': ('slim',),
 }
 
-urlpatterns = patterns('',
+urlpatterns = patterns(
+    '',
     url(r'^$', home.views.DetailSlimView.as_view(), name='home'),
     url(r'^infoorg/$', infoorg.views.HomeView.as_view(), name='info-home'),
     url(r'^infoorg/infotip$',
