@@ -1,7 +1,5 @@
 from selenium import webdriver
 
-from django.test import LiveServerTestCase
-
 from django.contrib.staticfiles.testing \
     import StaticLiveServerCase
 
