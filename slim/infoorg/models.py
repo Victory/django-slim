@@ -2,7 +2,9 @@ from django.db import models
 
 # Create your models here.
 
-from infoorg.validators import *
+from infoorg.validators import (
+    validate_title,
+    validate_description)
 
 
 class InformerFiles(models.Model):
@@ -22,7 +24,7 @@ class InformerLinks(models.Model):
 class InformerIpNotes(models.Model):
     title = models.CharField(
         max_length=140,
-         validators=[validate_title])
+        validators=[validate_title])
     note = models.TextField()
 
     date_added = models.DateTimeField()
