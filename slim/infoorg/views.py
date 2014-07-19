@@ -1,19 +1,7 @@
-from django.shortcuts import render
-
-from django.utils.translation import ugettext as _
-from django.core.urlresolvers import reverse
-from django.shortcuts import render
-from django.core.context_processors import csrf
 from django.template import RequestContext, loader
 
 from django.views.generic import (
-    ListView,
-    FormView,
-    CreateView,
-    UpdateView,
-    DeleteView,
-    DetailView,
-    TemplateView)
+    FormView)
 
 from infoorg.forms import InfoTipForm
 from utilityslim.views import JSONFormMixin
