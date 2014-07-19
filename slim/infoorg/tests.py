@@ -1,8 +1,6 @@
 from selenium import webdriver
 from time import sleep
 
-from django.test import LiveServerTestCase
-
 from django.contrib.staticfiles.testing \
     import StaticLiveServerCase
 
