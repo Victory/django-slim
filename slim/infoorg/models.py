@@ -54,13 +54,15 @@ class Informer(models.Model):
 
     links = models.ForeignKey(
         InformerLinks,
-        verbose_name="links related to this informer")
+        verbose_name="links related to this informer",
+        null=True)
 
     ip_notes = models.ForeignKey(
         InformerIpNotes,
-        verbose_name="notes about intellectual property rights")
+        verbose_name="notes about intellectual property rights",
+        null=True)
 
-    informer = models.ForeignKey(InformerStatusType, primary_key=True)
+    status = models.ForeignKey(InformerStatusType, primary_key=True)
 
     date_added = models.DateTimeField()
     last_modified = models.DateTimeField(auto_now_add=True)
