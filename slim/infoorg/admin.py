@@ -8,6 +8,7 @@ class InformerForm(forms.ModelForm):
     class Meta:
         modle = Informer
 
+
 class InformerAdmin(admin.ModelAdmin):
     form = InformerForm
     exclude = ['files', 'links', 'status', 'ip_notes']
