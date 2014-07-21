@@ -50,7 +50,8 @@ class Informer(models.Model):
 
     files = models.ForeignKey(
         InformerFiles,
-        verbose_name="files related to this informer")
+        verbose_name="files related to this informer",
+        null=True)
 
     links = models.ForeignKey(
         InformerLinks,
@@ -67,6 +68,8 @@ class Informer(models.Model):
     date_added = models.DateTimeField()
     last_modified = models.DateTimeField(auto_now_add=True)
 
+    def __unicode__(self):
+        return unicode(self.title)
 
 class InfoTip(models.Model):
     subject = models.CharField(
