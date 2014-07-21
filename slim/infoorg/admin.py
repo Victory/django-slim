@@ -13,5 +13,6 @@ class InformerAdmin(admin.ModelAdmin):
     form = InformerForm
     exclude = ['files', 'links', 'status', 'ip_notes']
 
+
 admin.site.register(Informer, InformerAdmin)
 admin.site.register(InfoTip)
