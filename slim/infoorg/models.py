@@ -71,6 +71,7 @@ class Informer(models.Model):
     def __unicode__(self):
         return unicode(self.title)
 
+
 class InfoTip(models.Model):
     subject = models.CharField(
         max_length=140,
